@@ -1,12 +1,23 @@
 package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
+import com.google.common.collect.Table;
 
-public class TrainControllerImpl implements TrainController {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import com.google.common.collect.HashBasedTable;
+
+public class TrainControllerImpl implements TrainController{
+private Table<String, Integer, Integer> records = HashBasedTable.create();
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+	
+	public void addrec(){
+		records.put(new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()),new Integer(step), new Integer(referenceSpeed));
+	}
 
 	@Override
 	public void followSpeed() {
@@ -39,6 +50,7 @@ public class TrainControllerImpl implements TrainController {
 		if (referenceSpeed > speedLimit) {
 			referenceSpeed = speedLimit;
 		}
+		addrec();
 	}
 
 	@Override
