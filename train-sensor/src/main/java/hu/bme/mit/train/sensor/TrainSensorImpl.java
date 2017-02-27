@@ -16,7 +16,7 @@ public class TrainSensorImpl implements TrainSensor {
 	public int getSpeedLimit() {
 		return speedLimit;
 	}
-	//ez egy Merge conflict teszt
+	//teszt komment merge conflict
 	@Override
 	public void overrideSpeedLimit(int speedLimit) {
 		this.speedLimit = speedLimit;
