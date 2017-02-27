@@ -7,6 +7,8 @@ public interface TrainController {
 	int getReferenceSpeed();
 	
 	int getSpeedLimit();
+	
+	int getTableSize();
 
 	void setSpeedLimit(int speedLimit);
 

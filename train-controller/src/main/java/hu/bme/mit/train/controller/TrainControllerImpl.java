@@ -52,6 +52,10 @@ private Table<String, Integer, Integer> records = HashBasedTable.create();
 		}
 		addrec();
 	}
+	
+	public int getTableSize(){
+		return records.size();
+	}
 
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
