@@ -10,11 +10,10 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void followSpeed() {
+		referenceSpeed += step;
 		if (referenceSpeed <= 0) {
 			referenceSpeed = 0;
-		} else {
-			referenceSpeed += step;
-		}
+		} 
 
 		enforceSpeedLimit();
 	}
